@@ -1,0 +1,37 @@
+<script type="text/javascript" src="assets/plugins/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery.cookie.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery.appear.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery.isotope.js"></script>
+        <script type="text/javascript" src="assets/plugins/masonry.js"></script>
+
+        <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/stellar/jquery.stellar.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/knob/js/jquery.knob.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery.backstretch.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/superslides/dist/jquery.superslides.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/styleswitcher/styleswitcher.js"></script><!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->
+        <script type="text/javascript" src="assets/plugins/mediaelement/build/mediaelement-and-player.min.js"></script>
+
+        <!-- REVOLUTION SLIDER -->
+        <script type="text/javascript" src="assets/plugins/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+        <script type="text/javascript" src="assets/js/slider_revolution.js"></script>
+
+
+        <script type="text/javascript" src="assets/js/scripts.js"></script>
+
+
+        <!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
+        <!--<script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-XXXXX-X', 'domainname.com');
+                ga('send', 'pageview');
+        </script>
+        -->

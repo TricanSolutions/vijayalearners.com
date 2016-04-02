@@ -1,0 +1,150 @@
+function loadingresults(admissionNo) {
+//    alert('ok');
+    var tableData;
+    $.post("models/modelresultsearch.php", {loading_results: 'table', admissionNo: admissionNo}, function (e) {
+        if (e === undefined || e.length === 0 || e === null) {
+
+            $('#noresult').show();
+            $('#noresult').text("No Data Found in Database");
+//            $('#admisionnum').hide();
+
+//            $('#studentname').hide();
+//            $('#vclass').hide();
+//            $('#vclassB').hide();
+//            $('#examdate').hide();
+//            $('#status').hide();
+            $('#resultform').hide();
+            $('#practicalexam1').show(200);
+//            $('#admissionNumtxt').text("");
+//            $('#writtenexam1').show(200);
+            tableData = '<tr class="error"><td colspan="4"> No Data Found in database </td></tr>';
+            $('#tbldetails tbody').html('').append(tableData);
+        } else {
+            $.each(e, function (index, data) {
+//                tableData += '<tr>';
+//                tableData += '<td>' + data.admission_no + '</td>';
+//                tableData += '<td>' + data.namewithinitial + '</td>';
+//                tableData += '<td>' + data.vehicle_class + '</td>';
+//                tableData += '<td>' + data.examDate + '</td>';
+//                tableData += '<td>' + data.writtenResult + '</td>';
+//                tableData += '<td>' + data.passOrFail + '</td>';
+//                tableData += '</tr>';
+//                $('#vclassA').hide();
+//                $('#vclassB').hide();
+//                $('#vclassB1').hide();
+//                $('#vclassG').hide();
+//                $('#vclassD').hide();
+//                $('#vclassCE').hide();
+//                $('#practicalexam1').show(200);
+//                $('#writtenstatustab').show();
+//                $('#writtenmarkstab').show();
+
+                $('#vclassB').hide();
+                $('#vclassB1').hide()
+                $('#vclass').show();
+                $('#vclassA').hide();
+                $('#resultform').slideDown()();
+                $('#admisionnum').text(data.admission_no);
+                $('#studentname').text(data.namewithinitial);
+//                $('#vclass').text(data.vehicle_class);
+                $('#examdate').text(data.examDate);
+                $('#writtenresults').text(data.writtenResult);
+                $('#status').text(data.passOrFail);
+
+
+            });
+            //Load Json Data to Table
+            $('#tbldetails tbody').html('').append(tableData);
+
+            //Delete Data through Delete button
+            $('.deletecustomer').click(function () {
+                teacher_id_for_delete = $(this).val();
+                confirm("Deletion of Company Data", "Are you sure want to delete This Teacher", "No", "Yes", function () {
+                    $.post("models/customerManagementModel.php", {delete_teacher: 'delete', teacher_id_for_delete: teacher_id_for_delete}, function (delMsg) {
+                        $.each(delMsg, function (index, valueDel) {
+                            if (valueDel.msgType === 1) {
+                                swal("Deleted!", "Teacher has been deleted successfully ", "success");
+                            } else if (valueDel.msgType === 2) {
+                                swal("Something Went Wrong", "Your Data could not Deleted", "warning");
+                            }
+                        });
+                        teacher_data_table();
+                    }, "json");
+                });
+            });
+            $('.editcustomer').click(function () {
+                $('#btnUpdate').show();
+                $('#btnCancel').show();
+                $('#btnSave').hide();
+                $('#tid').val($(this).val());
+                var teacherID = $('#tid').val();
+
+                $.post("models/customerManagementModel.php", {get_teacher_data_to_up: 'upData', teacherID: teacherID}, function (up) {
+                    $.each(up, function (index, data) {
+                        $('#tname').val(data.name);
+                        $('#tclass').val(data.class);
+                    });
+                }, "json");
+            });
+        }
+    }, "json");
+}
+
+
+function loadingresultspractical(admissionNo) {
+//    alert('ok');
+    var tableData;
+    $.post("models/modelresultsearch.php", {loading_practical_results: 'table', admissionNo: admissionNo}, function (e) {
+        if (e === undefined || e.length === 0 || e === null) {
+
+            $('#noresult').show();
+            $('#noresult').text("No Data Found in Database");
+//            $('#admisionnum').hide();
+//            $('#studentname').hide();
+            $('#vclass').hide();
+
+//            $('#examdate').hide();
+            $('#status').hide();
+            $('#resultform').hide();
+            $('#practicalexam1').show(200);
+//            tableData = '<tr class="error"><td colspan="4"> No Data Found in database </td></tr>';
+//            $('#tbldetails tbody').html('').append(tableData);
+        } else {
+            $.each(e, function (index, data) {
+//                $('#vclassB').show();
+//                $('#vclassG').show();
+//                $('#practicalexam1').show(200);
+                $('#admisionnum').text(data.admission_no);
+                $('#studentname').text(data.namewithinitial);
+                $('#vclassA').text(data.a + " - " + data.a_pass_or_fail + " :   :  " + data.g + " - " + data.g_pass_or_fail);
+                $('#vclassB').text(data.b + " - " + data.b_pass_or_fail + " :   :  " + data.d + " - " + data.d_pass_or_fail);
+                $('#vclassB1').text(data.bone + " - " + data.bone_pass_or_fail + " :   :  " + data.ce + " - " + data.ce_pass_or_fail);
+//                $('#vclassG').text(data.g + " : " + data.g_pass_or_fail);
+//                $('#vclassD').text(data.d + " - " + data.d_pass_or_fail);
+//                $('#vclassCE').text(data.ce + " - " + data.ce_pass_or_fail);
+                $('#examdate').text(data.examDate);
+                $('#practicalexam1').hide(200);
+//                $('#writtenresults').text(data.writtenResult);
+//                $('#status').text(data.passOrFail);
+//                 $('#vclassA').hide();
+//                $('#vclassB').hide();
+//                $('#vclassB1').hide();
+                $('#resultform').show();
+                $('#vclassG').hide();
+                $('#vclassD').hide();
+                $('#vclassCE').hide();
+                $('#writtenstatustab').hide();
+                $('#writtenmarkstab').hide();
+
+
+
+            });
+            //Load Json Data to Table
+
+
+            //Delete Data through Delete button
+
+
+        }
+    }, "json");
+}
