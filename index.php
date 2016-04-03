@@ -1360,7 +1360,7 @@ $('#writtenprintbtn').click(function (){
     testprint(admisionNumber,name,examdate, marks ,vclass,  ststus);
     
    document.location.href='report.php';
-
+   });
         /*COMMENTS*/
 //see text file
 
