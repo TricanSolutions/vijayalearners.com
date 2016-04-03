@@ -1,6 +1,6 @@
 <?php
 
-$baseURL = ' http://localhost/vijayatest';
+$baseURL = ' http://localhost/vijayalearners.com';
 $user_registration = 1;  // set 0 or 1
 
 class MainConfig {

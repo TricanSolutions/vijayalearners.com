@@ -19,6 +19,7 @@ function loadingresults(admissionNo) {
 
                 $('#vclass').show();
                 $('#admisionnum').text(data.admission_no);
+
                 $('#studentname').text(data.namewithinitial);
                 $('#examdate').text(data.examDate);
                 $('#vclass').text(data.vehicle_class);
@@ -35,8 +36,14 @@ function loadingresults(admissionNo) {
                 $('#writtenprintbtn').show();
 
 
-
-
+                $('#hiddenadmission').val(data.admission_no);
+                $('#hiddenname').val(data.namewithinitial);
+                $('#hiddenexamdate').val(data.examDate);
+                $('#hiddenvclass').val(data.vehicle_class);
+                $('#hiddenamarks').val(data.writtenResult);
+                $('#hiddenstatus').val(data.passOrFail);
+                $('#hiddenstatus').val(data.passOrFail);
+                $('#hiddenwrittenexamresult').val("writtenexamresult");
 
 
             });
@@ -94,7 +101,7 @@ function loadingresultspractical(admissionNo) {
 //               
                 $('#writtenmarkstab').hide();
                 $('#writtenstatustab').hide();
-
+                $('#writtenprintbtn').hide();
 
                 $('#resultform').show();
                 $('#vclassA').show();
@@ -107,8 +114,22 @@ function loadingresultspractical(admissionNo) {
                 $('#vclassA').text(data.a + " - " + data.a_pass_or_fail + " :   :  " + data.g + " - " + data.g_pass_or_fail);
                 $('#vclassB').text(data.b + " - " + data.b_pass_or_fail + " :   :  " + data.d + " - " + data.d_pass_or_fail);
                 $('#vclassB1').text(data.bone + " - " + data.bone_pass_or_fail + " :   :  " + data.ce + " - " + data.ce_pass_or_fail);
-                $('#writtenprintbtn').hide();
+
                 $('#practicalprintbtn').show();
+
+
+
+
+                $('#hiddenadmissionp').val(data.admission_no);
+                $('#hiddennamep').val(data.namewithinitial);
+                $('#hiddenexamdatep').val(data.examDate);
+                $('#hiddenvclassA').val(data.a_pass_or_fail);
+                $('#hiddenvclassB').val(data.b_pass_or_fail);
+                $('#hiddenvclassB1').val(data.bone_pass_or_fail);
+                $('#hiddenvclassG').val(data.g_pass_or_fail);
+                $('#hiddenvclassD').val(data.d_pass_or_fail);
+                $('#hiddenvclassCE').val(data.ce_pass_or_fail);
+
 
 
             });

@@ -1,6 +1,6 @@
 <?php
 
-$base_path = 'http://localhost/vijayatest';
+$base_path = 'http://localhost/vijayalearners.com';
 $site_title = ':::VIJAYA LEARNERS:::';
 
 //session_start();

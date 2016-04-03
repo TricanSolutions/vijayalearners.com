@@ -55,25 +55,23 @@
     </head>
     <body><!-- Available classes for body: boxed , pattern1...pattern10 . Background Image - example add: data-background="assets/images/boxed_background/1.jpg"  -->
         <?php
-        $no = $_POST["hid"];
-        $name = $_POST["hname"];
-        $examdate = $_POST["hexamdate"];
-        $vclass = $_POST["hvclass"];
-        $marks = $_POST["hmarks"];
-        $status = $_POST["hstatus"];
+        $no = $_POST["hidp"];
+        $name = $_POST["hnamep"];
+        $examdate = $_POST["hexamdatep"];
+        $vclassA = $_POST["hvclassA"];
+        $vclassB = $_POST["hvclassB"];
+        $vclassB1 = $_POST["hvclassB1"];
+        $vclassG = $_POST["hvclassG"];
+        $vclassD = $_POST["hvclassD"];
+        $vclassCE = $_POST["hvclassCE"];
 
-//echo $no;
-        $writtenexamresult = $_POST["hwrittenexamresult"];
 
 
-
-        if ($writtenexamresult == "writtenexamresult") {
-            
-        }
+       
         ?>
         <!-- Top Bar -->
         <header id="topHead">
-            <?php
+     <?php
             include './common/topBar.php';
             ?>
         </header>
@@ -115,7 +113,13 @@
                             <img class="img-responsive" src="assets/images/logonew.png" alt="" />
                         </div>
 
-             
+                        <!--							<div class="col-sm-6 text-right">
+                                                                                        <p>
+                                                                                                #0123456789 &bull; <strong>29 June 2014</strong>
+                                                                                                <br />
+                                                                                                Lid est laborum dolo rumes fugats untras.
+                                                                                        </p>
+                                                                                </div>-->
 
                     </div>
                     <!-- /INVOICE HEADER -->
@@ -127,10 +131,10 @@
 
                         <div class="col-sm-6">
 
-                            <h4><strong>Written Exam</strong> Details</h4>
+                            <h4><strong>Practical Exam</strong> Details</h4>
                             <ul class="list-unstyled">
-                                <li><strong>Student Name    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</strong> <strong><?php echo $name  ?></strong></li>
-                                <li><strong>Admission Number&nbsp;:</strong> <strong><?php echo $no ?></strong></li>
+                                <li><strong>Student Name    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</strong> <strong><?php echo $name ?></strong></li>
+                                <li><strong>Admission Number&nbsp;:</strong> <strong><?php echo $no  ?></strong></li>
                                 <li><strong>Exam Date      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</strong> <strong><?php echo $examdate ?></strong></li>
                                 <!--<li><strong>DOB:</strong> YYYY/MM/DD</li>-->
                             </ul>
@@ -156,12 +160,12 @@
 
 
                 <!-- INVOICE BODY -->
-                <div class="panel panel-primary"style="height: 320px;">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title"> <strong></strong></h3>
                     </div>
 
-                    <div class="panel-body" >
+                    <div class="panel-body">
 
                                                 <!--<p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.</p>-->
 
@@ -175,7 +179,7 @@
                             <thead>
                                 <tr>
                                     <th>Vehicle class</th>
-                                    <th>Marks</th>
+<!--                                    <th>Marks</th>-->
                                     <th class="hidden-sm">Status</th>
 
                                 </tr>
@@ -184,11 +188,20 @@
                             <!-- table items -->
                             <tbody>
                                 <tr>  
-                                    <td><?php echo $vclass ?></td>
-                                    <td><?php echo $marks ?></td>
-                                    <td class="hidden-sm"><?php echo $status ?></td>
+                                    <td>A</td> <td><?php echo $vclassA ?></td>
+
+
+
+
+
+                        
 
                                 </tr>
+                                <tr><td>B</td><td><?php echo $vclassB ?></td></tr>
+                                <tr><td>B1</td><td><?php echo $vclassB1 ?></td></tr>
+                                <tr><td>G</td><td><?php echo $vclassG ?></td></tr>
+                                <tr><td>D</td><td><?php echo $vclassD ?></td></tr>
+                                <tr><td>CE</td><td><?php echo $vclassCE ?></td></tr>
           <!--                      <tr> item 
                                         <td>2</td>
                                         <td>LCD Display</td>
@@ -221,7 +234,7 @@
                 </div>
                 <!-- INVOICE BODY -->
 
-                <hr class="half-margins invisible" /><!-- separator -->
+                
 
                 <!-- INVOICE FOOTER -->
                 <div class="row">
@@ -255,7 +268,7 @@
                                                                         </ul>-->
 
                         <div class="padding20">
-                            <button class="btn btn-default" id="printbtn" onclick="window.print(); window.redirect();"><i class="fa fa-print"></i> Print</button>            
+                            <button class="btn btn-default" onclick="window.print();redirect();" id="printbtn"><i class="fa fa-print"></i> Print</button>            
                             <!--<button class="btn btn-primary">Invoice Submit</button>-->            
                         </div>
 
@@ -272,18 +285,7 @@
 
 
         <!-- FOOTER -->
-        
 
-            <!-- copyright , scrollTo Top -->
-            
-            <!-- copyright , scrollTo Top -->
-
-
-            <!-- footer content -->
-
-            <!-- footer content -->
-
-        
         <!-- /FOOTER -->
 
 
@@ -326,22 +328,23 @@
                                 $(document).ready(function () {
 
 
+                                   
 
-                                });
-
-
-
-                                $('#printbtn').click(function redirect() {
-
-
-                                    document.location.href = 'index.php';
 
 
 
                                 });
-
-
-
+                                
+                         $('#printbtn').click(function redirect(){
+                             
+                             
+                             document.location.href='index.php';
+                             
+                             
+                             
+                         });    
+                                
+                                
     </script>
     <!-- Mirrored from theme.stepofweb.com/Atropos/v1.7/HTML/page-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Mar 2016 14:10:32 GMT -->
 </html>

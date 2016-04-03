@@ -130,8 +130,8 @@
 
             <!-- modal body -->
             <div class="modal-body"style="color: black" id="w">
-                <h4 href="" id="writtenexam" onclick="" > Find Written Exam Results</h4>
-
+                <h4 href="" id="writtenexam" onclick="" > ලිඛ්ත පරීක්ෂනය - ප්‍රතිඵල</h4>
+<!--<h4 href="" id="writtenexam" onclick="" > Find Written Exam Results</h4>-->
                 <!--                <form action="#" method="post" id="writtenexamform">-->
                 <div class="row"id="writtenexamform">
 
@@ -158,7 +158,8 @@
             </div>
 
             <div class="modal-body"style="color: black" id="p">
-                <h4 id="practicalexam"  > Find Practical Exam Results</h4>
+                <h4 id="practicalexam"  > ප්‍රායෝගික පරීක්ෂනය - ප්‍රතිඵල</h4>
+                <!--<h4 id="practicalexam"  > Find Practical Exam Results</h4>-->
                 <!--                <a href="" id="practicalexam" onclick="test()" > find Practical Exam Results</a>-->
                 <!--                <form action="#" method="post" id="practicalexamform">-->
                 <div class="row"id="practicalexamform">
@@ -201,22 +202,46 @@
                 </table>-->
                 <h2>YOUR RESULTS</h2>
                 <!--<span class="label label-success" id="printbtn"style="text-align:right; float: right;">print</span>-->
-                
+
                 <div class="form-group"style="background-color: #f9f9f9;border-bottom: 2px solid #eeeeee; border-radius: 5px;">
                     <label for="programe_symble" class="col-lg-4 control-label" id="noresult" ></label>
-                    
-                </div>
-                
-<!--                <div class="form-group"style="text-align:right; " id="printbtntab">
-                    
 
-                </div> -->
+                </div>
+
+                <!--                <div class="form-group"style="text-align:right; " id="printbtntab">
+                                    
+                
+                                </div> -->
                 <div class="form-group">
-                    <button type="button" class="btn btn-primary btn-sm"style="text-align:right; float: right;" id="writtenprintbtn" >Print</button>
-                    <button type="button" class="btn btn-primary btn-sm"style="text-align:right; float: right;" id="practicalprintbtn">Print</button>
+                    <form method="post" action="./report.php">
+
+                        <button type="submit" class="btn btn-primary btn-sm"style="text-align:right; float: right;" id="writtenprintbtn" >Print</button>
+                        <input type="hidden" name="hid" value="" id="hiddenadmission"/>
+                        <input type="hidden" name="hname" value="" id="hiddenname"/>
+                        <input type="hidden" name="hexamdate" value="" id="hiddenexamdate"/>
+                        <input type="hidden" name="hvclass" value="" id="hiddenvclass"/>
+                        <input type="hidden" name="hmarks" value="" id="hiddenamarks"/>
+                        <input type="hidden" name="hstatus" value="" id="hiddenstatus"/>
+                        <input type="hidden" name="hwrittenexamresult" value="" id="hiddenwrittenexamresult"/>
+                    </form>
+                   
+                    
+                    <form method="post" action="./practicalreport.php">
+                    
+                        <button type="submit" class="btn btn-primary btn-sm"style="text-align:right; float: right;" id="practicalprintbtn">Print</button>
+                        <input type="hidden" name="hidp" value="" id="hiddenadmissionp"/>
+                        <input type="hidden" name="hnamep" value="" id="hiddennamep"/>
+                        <input type="hidden" name="hexamdatep" value="" id="hiddenexamdatep"/>
+                        <input type="hidden" name="hvclassA" value="" id="hiddenvclassA"/>
+                        <input type="hidden" name="hvclassB" value="" id="hiddenvclassB"/>
+                        <input type="hidden" name="hvclassB1" value="" id="hiddenvclassB1"/>
+                        <input type="hidden" name="hvclassG" value="" id="hiddenvclassG"/>
+                        <input type="hidden" name="hvclassD" value="" id="hiddenvclassD"/>
+                        <input type="hidden" name="hvclassCE" value="" id="hiddenvclassCE"/>
+                        
                     <!--<h6 for="programe_symble" class="col-lg-4 control-label" id="practicalexam1" style="color: red;" >click here find your practical exam Results</h6>-->
                     <!--<h6 for="programe_symble" class="col-lg-4 control-label" id="writtenexam1" style="color: red;" >click here find your Written exam Results</h6>-->
-
+ </form>
                 </div>
                 <div id ="resultform" class="col-lg-12">
 
